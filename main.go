@@ -1,9 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import "github.com/fogleman/gg"
 
 func main() {
-	fmt.Println("test")
+	dc := gg.NewContext(1000, 1000)
+	dc.DrawCircle(500, 500, 400)
+	dc.SetRGB(0, 0, 0)
+	dc.Fill()
+	dc.SavePNG("out/out.png")
 }
